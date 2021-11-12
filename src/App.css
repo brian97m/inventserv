@@ -5,13 +5,20 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  animation: orbit infinite 3s linear;
+  transform-origin: top;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: orbit infinite 3s linear;
+    transform-origin: top;
+    animation: App-logo-spin infinite 3s linear;
   }
 }
+
+
 
 .App-header {
   background-color: #282c34;
@@ -27,12 +34,30 @@
 .App-link {
   color: #61dafb;
 }
+@keyframes orbit{
+  from{
+    transform: scale3d(0.7,0.7,0.7);
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: scale3d(0.1,0.1,0.5);
+    transform: rotate(180deg);
+    
+  }
+  to{
+    transform: scale3d(0.7,0.7,0.7);
+    transform: rotate(360deg);
+
+  }
+}
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
+    opacity: 0;
   }
   to {
     transform: rotate(360deg);
+    opacity: 1;
   }
 }
